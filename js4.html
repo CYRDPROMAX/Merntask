@@ -1,0 +1,28 @@
+<html>
+<head>
+   <title>task4</title>
+</head>
+<body>
+    <b>Date</b>
+
+   <div id="date"> </div>
+   <b>Time</b>
+   <div id="time"> </div>
+      <script type="text/javascript">
+      let date = document.getElementById("date");
+    let newDate = new Date();
+      let year = newDate.getFullYear();
+      let month = newDate.getMonth();
+      let todaySDate = newDate.getDate();
+      date.innerHTML = " " + todaySDate + "/ " + month + "/ " + year;
+   </script>
+   <script>
+          let time = document.getElementById("time");
+    let hours = newDate.getHours();
+      let minutes = newDate.getMinutes();
+      let seconds = newDate.getSeconds();
+      time.innerHTML = hours + ": " + minutes + ": " + seconds;
+
+   </script>
+</body>
+</html>

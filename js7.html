@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="train.png" width="50" height="50" id='i1' style="position:absolute; left: 500px; top: 100px;">
+    <div id='msg'></div>  
+
+    <script language='JavaScript' type='text/JavaScript'>
+        <!--
+        function reset1() {
+          clearTimeout(my_time);
+          document.getElementById('i1').style.left = "500px";
+          document.getElementById('i1').style.top = "100px";
+          document.getElementById("msg").innerHTML = "";
+        }
+        
+        function disp() {
+          var step = 5; // Change this step value
+    
+          var x = document.getElementById('i1').offsetLeft;
+    
+          // Always move to the right
+          x = x + step;
+      
+          document.getElementById('i1').style.left = x + "px"; // horizontal movement
+        }
+        
+        function timer() {
+          disp();
+          var x = document.getElementById('i1').offsetLeft;
+          document.getElementById("msg").innerHTML = "X: " + x;
+          my_time = setTimeout('timer()', 10);
+        }
+        //-->
+    </script>
+    <h1>click buttons to handle the animation</h1>
+    <br><br><br><br>
+    <input type="button" onClick="timer()" value="Start">
+    <input type="button" onClick="reset1()" value="Stop">
+</body>
+</html>

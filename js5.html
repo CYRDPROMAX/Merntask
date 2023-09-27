@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>Name:</b>
+    <input type="text" id="input1">
+    <span></span><br>
+    <b>Email:</b>
+    <input type="text" id="input2">
+    <span></span><br>
+    <b>Website:</b>
+    <input type="text" id="input3">
+    <span></span><br>
+    <b>Message:</b>
+    <input type="text" id="input4">
+    <span></span><br>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            for (let i = 0; i < 4; i++) { 
+                var val = document.getElementById("input" + (i + 1)).value;
+                if (val == "") {
+                    document.getElementsByTagName("span")[i].innerHTML = "Required";
+                    document.getElementById("input" + (i + 1)).style.borderColor = "red";
+                    document.getElementById("input" + (i + 1)).style.borderWidth = "4px";
+                }
+            }
+        });
+    </script>
+    <br>
+    <input type="button" value="Submit"> 
+</body>
+</html>

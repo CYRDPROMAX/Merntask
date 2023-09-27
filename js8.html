@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+                body {
+            background-color: rgb(204, 106, 204); 
+        }
+
+        .field-status {
+            font-weight: bold;
+            color: red;
+        }
+
+        .field-status.normal {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" bordercolor="black" height="40" width="75%">
+        <tr>
+            <td>FIRSTNAME</td>
+            <td><input type="text" id="firstname"></td>
+            <td><span class="field-status">Poor</span></td>
+        </tr>
+        <tr>
+            <td>LASTNAME</td>
+            <td><input type="text" id="lastname"></td>
+            <td><span class="field-status">Poor</span></td>
+
+        </tr>
+
+        <tr>
+            <td>EMAIL</td>
+            <td><input type="text" id="email"></td>
+            <td><span class="field-status">Poor</span></td>
+
+        </tr>
+        <tr>
+            <td>PASSWORD</td>
+            <td><input type="password" id="password"></td>
+            <td><span class="field-status">Poor</span></td>
+
+        </tr>
+        <tr>
+            <td>RE PASSWORD</td>
+            <td><input type="password" id="repassword"></td>
+            <td><span class="field-status">Poor or Mistaken</span></td>
+
+        </tr>
+        <tr>
+            <td>GENDER</td>
+            <td>
+                <input type="radio" name="gender" value="male"> Male
+                <br>
+                <input type="radio" name="gender" value="female"> Female
+            </td>
+        </tr>
+        <tr>
+            <td>AGE</td>
+            <td><input type="text" id="age"></td>
+            <td><span class="field-status">Poor</span></td>
+
+        </tr>
+        <tr>
+            <td>PHONE NUMBER</td>
+            <td><input type="text" id="phonenumber"></td>
+            <td><span class="field-status">Poor</span></td>
+
+        </tr>
+        <tr>
+            <td>ADDRESS</td>
+            <td><input type="text" id="address"></td>
+            <td><span class="field-status">Poor</span></td>
+
+        </tr>
+        <tr>
+            <td>STATE</td>
+            <td><input type="text" id="state"></td>
+            <td><span class="field-status">Poor</span></td>
+
+        </tr>
+        <tr>
+            <td>COUNTRY</td>
+            <td>
+                <select name="c" id="country">
+                    <option value="c">Choose your country</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Russia">Russia</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>LANGUAGES KNOWN</td>
+            <td>
+                <input type="checkbox" id="english"> English
+                <input type="checkbox" id="hindi"> Hindi
+                <input type="checkbox" id="kannada"> Kannada
+                <input type="checkbox" id="telugu"> Telugu
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="declaration"></td>
+            <td>Hereby I declare all the given details are true</td>
+        </tr>
+        <tr>
+            <td>Log in to Ethnus website</td>
+            <td><a href="www.ethnus.com">Log in</a></td>
+        </tr>
+
+    </table>
+
+    <script>
+        const inputFields = document.querySelectorAll('input[type="text"], input[type="password"], input[type="checkbox"], input[type="radio"], select');
+        
+        inputFields.forEach(field => {
+            field.addEventListener('input', validateField);
+        });
+        
+        function validateField() {
+            const fieldName = this.id;
+            const fieldValue = this.value;
+            const fieldStatus = this.parentElement.nextElementSibling.querySelector('.field-status');
+            
+            if (fieldValue.trim() === '') {
+                fieldStatus.textContent = 'Poor';
+                fieldStatus.classList.remove('normal'); // Remove the 'normal' class if it was added
+            } else {
+                fieldStatus.textContent = 'Normal';
+                fieldStatus.classList.add('normal'); // Add the 'normal' class
+            }
+        }
+    </script>
+</body>
+</html>
